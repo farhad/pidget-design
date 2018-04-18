@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Pidget.AppTheme.DarkActionbar" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorControlNormal">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="Pidget.AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Pidget.BrandedLaunch" parent="Pidget.AppTheme.NoActionBar">
+        <item name="android:windowBackground">@drawable/branded_logo</item>
+    </style>
+
+    <style name="Pidget.Splash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Pidget.BrandedLaunch.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Pidget.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Pidget.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+</resources>

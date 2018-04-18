@@ -1,0 +1,81 @@
+apply plugin: 'com.android.library'
+
+def configs = rootProject.ext
+
+android {
+    compileSdkVersion       configs.vCompileSdk
+    buildToolsVersion       configs.vBuildTools
+
+    defaultConfig {
+        minSdkVersion       configs.vMinSdk
+        targetSdkVersion    configs.vTargetSdk
+
+        versionCode         configs.pidgetLibVersionCode
+        versionName         configs.pidgetLibVersionName
+
+        vectorDrawables.useSupportLibrary true
+    }
+    buildTypes {
+
+        debug
+                {
+                    debuggable true
+                    minifyEnabled false
+                    zipAlignEnabled false
+                    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+                    versionNameSuffix "-SNAPSHOT"
+                }
+
+        release
+                {
+                    debuggable false
+                    jniDebuggable false
+                    renderscriptDebuggable false
+                    minifyEnabled true
+                    zipAlignEnabled true
+                    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    Map<String,String> deps = configs.dependencies
+    implementation deps.appcompat
+    implementation deps.design
+}
+
+ext
+        {
+            bintrayRepo = 'maven'
+            bintrayName = 'pidget-design'
+            orgName = 'farhad'
+
+            publishedGroupId = 'io.github.farhad'
+            artifact = 'pidget-design'
+            libraryVersion = configs.pidgetLibVersionName
+
+            libraryName = 'pidget-design'
+            libraryDescription = 'design assets for Android'
+
+            siteUrl = 'https://github.com/farhad/pidget-design'
+            gitUrl = 'https://github.com/farhad/pidget-design.git'
+
+            developerId = 'farhad'
+            developerName = 'Farhad Faghihi'
+            developerEmail = 'ifarhadfaghihi@gmail.com'
+
+            licenseName = 'GNU General Public License v3.0'
+            licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+            allLicenses = ["GPL-3.0"]
+        }
+
+apply from: rootProject.file('gradle/install.gradle')
+apply from: rootProject.file('gradle/bintray-android.gradle')

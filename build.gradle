@@ -1,27 +1,61 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+import java.text.SimpleDateFormat
 
 buildscript {
-    
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.0'
-        
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'com.android.tools.build:gradle:3.1.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
     }
 }
 
 allprojects {
     repositories {
-        google()
+        mavenCentral()
         jcenter()
+        maven { url "https://maven.google.com" }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+
+    vBuildTools = "27.0.3"
+    vMinSdk = 15
+    vTargetSdk = 27
+    vCompileSdk = 27
+
+    vMajor = 1
+    vMinor = 0
+    vPatch = 0
+
+    pidgetLibVersionCode = vMajor*100 + vMinor*10 + vPatch
+    pidgetLibVersionName = "${vMajor}.${vMinor}.${vPatch}"
+
+    supportPackage = "com.android.support"
+    vSupportLibrary = "27.1.0"
+
+    vLeakCanary = '1.5.4'
+
+    dependencies = [
+
+            appcompat   : "$supportPackage:appcompat-v7:$vSupportLibrary" ,
+            design      : "$supportPackage:design:$vSupportLibrary" ,
+            pidgets     : "io.github.farhad:pidgets:$vMajor.$vMinor.$vPatch" ,
+            leak_canary_debug : "com.squareup.leakcanary:leakcanary-android:$vLeakCanary" ,
+            leak_canary_release : "com.squareup.leakcanary:leakcanary-android-no-op:$vLeakCanary"
+    ]
+}
+
+def getBuildTime() {
+    def df = new SimpleDateFormat("yyyy-MM-dd-HH:mm")
+    df.setTimeZone(TimeZone.getTimeZone("Asia/Tehran"))
+    return df.format(new Date())
 }
