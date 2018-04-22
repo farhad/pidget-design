@@ -1,6 +1,6 @@
 
 
-[![Download](https://api.bintray.com/packages/farhad/maven/pidget-design/images/download.svg)](https://bintray.com/farhad/maven/pidgets/_latestVersion)
+[![Download](https://api.bintray.com/packages/farhad/maven/pidget-design/images/download.svg)](https://bintray.com/farhad/maven/pidget-design/_latestVersion)
 
 
 `pidget-design ` includes reusable widely-used  drawable and xml assets for Android development. 
