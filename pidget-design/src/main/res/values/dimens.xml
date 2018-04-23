@@ -14,7 +14,7 @@
     <dimen name="margin_small">5dp</dimen>
     <dimen name="margin_medium">10dp</dimen>
     <dimen name="margin_large">15dp</dimen>
-    <dimen name="marigin_xlarge">20dp</dimen>
+    <dimen name="margin_xlarge">20dp</dimen>
 
     <dimen name="text_very_small">12sp</dimen>
     <dimen name="text_small">14sp</dimen>
