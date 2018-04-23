@@ -49,7 +49,6 @@
     </style>
 
     <style name="ButtonMediumNoMarginPrimaryDark" parent="TextViewMedium">
-        <item name="useParsiDigits">true</item>
         <item name="android:drawablePadding">@dimen/padding_medium</item>
         <item name="android:background">@drawable/bg_btn_primarydark</item>
     </style>
@@ -68,14 +67,12 @@
     </style>
 
     <style name="EditTextMediumNoMarginWhiteRegular" parent="TextViewMedium">
-        <item name="hideBottomLine">true</item>
         <item name="android:textDirection">ltr</item>
         <item name="android:background">@drawable/bg_edittext_white</item>
         <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <style name="EditTextMediumNoMarginWhiteBold" parent="EditTextMediumNoMarginWhiteRegular">
-        <item name="fontAdapterType">bold</item>
     </style>
 
     <style name="PhoneNumberEditTextMediumBold" parent="EditTextMediumNoMarginWhiteBold">
