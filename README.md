@@ -16,7 +16,7 @@ repositories {
 	jcenter()
 }
 
-implementation 'io.github.farhad:pidget-design:1.0.1'
+implementation 'io.github.farhad:pidget-design:1.0.4'
 ```
 
 ## License
